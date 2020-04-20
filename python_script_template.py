@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 '''
+<<<<<<< HEAD
 Description
 
  script to easily configure what to do with windows through npyscreen tui
@@ -17,6 +18,15 @@ Dependencies
   awesomewm
  
 Changelog
+=======
+
+ script to check for possible reasons why samba/winbind fails 
+ original version under gitlab.schaubroeck.be/systemen/klanten/linux/support
+ 
+                                                                                        
+ 
+  changelog
+>>>>>>> b33922a... auto_copy_script
   Tue mar 3 2020 - <sam.vankerckhoven@cipalschaubroeck.be> 0.4.7
  * indicate samba version with a color
  

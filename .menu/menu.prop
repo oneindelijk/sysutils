@@ -1,0 +1,13 @@
+# menutemplate
+name=Main Menu
+type=menu
+parent=
+file_list=mmenulist.ilist
+command=
+w_height=
+l_height=
+w_width=
+name=
+stdout=yes
+no_items=yes
+separate_output=yes

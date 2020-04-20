@@ -1,0 +1,15 @@
+# menutemplate
+menuname="Main Menu"
+tags=
+type=
+parent=
+file=
+file_list=
+itemlist=mmenu
+command=
+w_height=
+l_height=
+w_width=
+stdout=yes
+no_items=yes
+separate_output=yes
