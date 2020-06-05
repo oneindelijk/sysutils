@@ -1,0 +1,58 @@
+#!/usr/bin/expect
+
+set force_conservative 0  ;# set to 1 to force conservative mode even if
+			  ;# script wasn't run conservatively originally
+if {$force_conservative} {
+	set send_slow {1 .1}
+	proc send ignore arg {
+		sleep .1
+		exp_send -s -- $arg
+	}
+}
+
+proc do_install { answ } {
+  expect {
+    # Send password at 'Password' prompt and tell expect to continue(i.e. exp_continue)
+    # processing responses staying in this 'expect' block.
+    # 'exp_continue' avoids having to write a another expect statement( think of it kinda like a loop, I said kinda )
+    -re "\[D|d]oorgaan" { exp_send "$answ\r"
+                           exp_continue  }
+    -re "pakket.*selectie.*>>" { exp_send "$answ\r"
+                           exp_continue  }
+    -re "Wilt u.*voor pakket.*\[J/n]" { exp_send "n\r"
+                           exp_continue  }
+    -re "conflicteren.*verwijderen.*\[j/N]" { exp_send "j\r"
+                           exp_continue  }	
+    -re "Bouwen\ van\ pakketten\ afbreken" { exp_send "s\r"
+                           exp_continue  }	
+    -re "Dit\ pakket\ overslaan" { exp_send "s\r"
+                           exp_continue  }	
+    -re "nnuleer.*bouwen.*pakketen.*>" { exp_send "s\r"
+                           exp_continue  }	
+    -re "vervangen.*\[J/n]" { exp_send "J\r"
+                           exp_continue  }
+    -re "Voer.*getal.*standaard" { exp_send "\r"
+                           exp_continue  }
+    -re "bouwbestanden.*bekijken" { exp_send "n\r"
+                           exp_continue  }						   
+    # Tell expect stay in this 'expect' block and for each character that SCP prints while doing the copy
+    # reset the timeout counter back to 0.
+    -re .                { exp_continue  }
+    timeout              { return 1      }
+    eof                  { return 0      }
+  }
+}
+set answ "j"
+set timeout 300
+spawn pikaur -Suy 
+set scpfile_results [do_install $answ]
+
+# If successful SCP, ...
+if { $scpfile_results == 0 } {
+  # Successful SCP session so exit with zero status
+  exit 0
+}
+# show whats in scpfile_results
+printf "%s\n" "scpfile_results"
+# Error attempting SCP, so exit with non-zero status
+exit 1
