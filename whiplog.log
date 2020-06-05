@@ -1,0 +1,339 @@
+Found 8 pkgs
+2020 01 23 00:26:15 |Found 8 pkgs
+   2020 01 23 00:29:49 ÷ Found 8 pkgs
+2020 01 23 00:30:04  ÷ Found 8 pkgs
+2020 01 23 00:30:22 ÷ Found 8 pkgs
+2020-01-23 00:31:07 ÷ Found 8 pkgs
+2020-01-23 00:31:21 ÷ Found 8 pkgs
+2020-01-23 00:31:50 ÷ Found 8 pkgs
+2020-01-23 00:37:34 ÷ Found 11 pkgs
+2020-01-23 00:37:51 ÷ Found 10 pkgs
+2020-01-23 00:45:05 ÷ Found 1 pkgs
+2020-01-23 00:46:16 ÷ Found 1 pkgs
+2020-01-23 00:46:51 ÷ Found 1 pkgs
+2020-01-23 00:49:24 ÷ Found 1 pkgs
+2020-01-23 00:49:52 ÷ Found 1 pkgs
+2020-01-23 00:50:33 ÷ Found 60 pkgs
+2020-01-23 00:51:11 ÷ Found 0 pkgs
+2020-01-23 00:52:00 ÷ Found 40 pkgs
+2020-01-23 00:53:28 ÷ Found 11 pkgs
+2020-01-23 00:53:42 ÷ Found 11 pkgs
+2020-01-23 00:56:35 ÷ Found 40 pkgs
+2020-01-23 00:59:03 ÷ Found 31 pkgs
+2020-01-23 01:01:37 ÷ Found 31 pkgs
+2020-01-23 01:39:48 ÷ dialog
+--column-separator  ÷ ,
+--menu              ÷ Main
+Menu                ÷ 22
+76                  ÷ 16
+2020-01-23 01:39:48 ÷ 1,Test,Item
+Shown               ÷ 2,Add,What
+is                  ÷ this
+3,Edit,Edit         ÷ the
+menu                ÷ 4,system,Try
+this                ÷ !
+5,MySysMenu,mylog   ÷ 
+2020-01-23 01:40:30 ÷ dialog
+--column-separator  ÷ ,
+--menu              ÷ Main Menu
+22                  ÷ 76
+16                  ÷ 
+2020-01-23 01:40:30 ÷ 1,Test,Item Shown
+2,Add,What is this
+3,Edit,Edit the menu
+4,system,Try this !
+5,MySysMenu,mylog
+2020-01-23 01:40:43 ÷ dialog
+--column-separator  ÷ ,
+--menu              ÷ Main Menu
+22                  ÷ 76
+16                  ÷ 
+2020-01-23 01:40:43 ÷ 1,Test,Item Shown
+2,Add,What is this
+3,Edit,Edit the menu
+4,system,Try this !
+5,MySysMenu,mylog
+2020-01-23 01:41:27 ÷ dialog
+--column-separator  ÷ ,
+--menu              ÷ Main Menu
+22                  ÷ 76
+16                  ÷ 
+2020-01-23 01:41:28 ÷ 1Item Shown2What is this3Edit the menu4Try this !5Edit-Menu
+2020-01-23 01:45:13 ÷ dialog
+--column-separator  ÷  
+--menu              ÷ Main Menu
+22                  ÷ 76
+16                  ÷ 
+2020-01-23 01:45:13 ÷ 1,Test,Item Shown
+2,Add,What is this
+3,Edit,Edit the menu
+4,system,Try this !
+5,MySysMenu,mylog
+2020-01-23 01:48:55 ÷ dialog
+--menu              ÷ Main Menu
+22                  ÷ 76
+16                  ÷ 
+2020-01-23 01:48:55 ÷ 1,Test,Item Shown
+2,Add,What is this
+3,Edit,Edit the menu
+4,system,Try this !
+5,MySysMenu,mylog
+2020-01-23 01:49:40 ÷ dialog
+--stdout            ÷ --no-items
+--menu              ÷ Main Menu
+22                  ÷ 76
+16                  ÷ 
+2020-01-23 01:49:40 ÷ 1,Test,Item Shown
+2,Add,What is this
+3,Edit,Edit the menu
+4,system,Try this !
+5,MySysMenu,mylog
+2020-01-23 01:50:15 ÷ dialog
+--stdout            ÷ --no-items
+--menu              ÷ Main Menu
+22                  ÷ 76
+16                  ÷ 
+2020-01-23 01:50:15 ÷ 1,Test,Item Shown
+2,Add,What is this
+3,Edit,Edit the menu
+4,system,Try this !
+5,MySysMenu,mylog
+2020-01-23 01:50:21 ÷ dialog
+--stdout            ÷ --no-items
+--menu              ÷ Main Menu
+22                  ÷ 76
+16                  ÷ 
+2020-01-23 01:50:21 ÷ 1,Test,Item Shown
+2,Add,What is this
+3,Edit,Edit the menu
+4,system,Try this !
+5,MySysMenu,mylog
+2020-01-23 01:50:45 ÷ dialog
+--stdout            ÷ --no-items
+--menu              ÷ Main Menu
+22                  ÷ 76
+16                  ÷ 
+2020-01-23 01:50:45 ÷ 1,Test,Item Shown
+2,Add,What is this
+3,Edit,Edit the menu
+4,system,Try this !
+5,MySysMenu,mylog
+2020-01-23 01:51:14 ÷ dialog
+--no-items          ÷ --menu
+Main Menu           ÷ 22
+76                  ÷ 16
+2020-01-23 01:51:14 ÷ 1,Test,Item Shown
+2,Add,What is this
+3,Edit,Edit the menu
+4,system,Try this !
+5,MySysMenu,mylog
+2020-01-23 01:51:38 ÷ dialog
+--column-separator  ÷ ,
+--no-items          ÷ --menu
+Main Menu           ÷ 22
+76                  ÷ 16
+2020-01-23 01:51:38 ÷ 1,Test,Item Shown
+2,Add,What is this
+3,Edit,Edit the menu
+4,system,Try this !
+5,MySysMenu,mylog
+2020-01-23 01:52:00 ÷ dialog
+--column-separator  ÷ ,
+--menu              ÷ Main Menu
+22                  ÷ 76
+16                  ÷ 
+2020-01-23 01:52:00 ÷ 1,Test,Item Shown
+2,Add,What is this
+3,Edit,Edit the menu
+4,system,Try this !
+5,MySysMenu,mylog
+2020-01-23 01:52:29 ÷ dialog
+--separator         ÷ ,
+--menu              ÷ Main Menu
+22                  ÷ 76
+16                  ÷ 
+2020-01-23 01:52:29 ÷ 1,Test,Item Shown
+2,Add,What is this
+3,Edit,Edit the menu
+4,system,Try this !
+5,MySysMenu,mylog
+2020-01-23 01:52:54 ÷ dialog
+--separator         ÷ ,
+--menu              ÷ Main Menu
+22                  ÷ 76
+16                  ÷ 
+2020-01-23 01:52:54 ÷ 1,Test,Item Shown
+2,Add,What is this
+3,Edit,Edit the menu
+4,system,Try this !
+5,MySysMenu,mylog
+2020-01-23 01:53:58 ÷ dialog
+--separator         ÷ ,
+--menu              ÷ Main Menu
+22                  ÷ 76
+16                  ÷ 
+2020-01-23 01:53:58 ÷ 1,Test,Item Shown
+2,Add,What is this
+3,Edit,Edit the menu
+4,system,Try this !
+5,MySysMenu,mylog
+2020-01-23 01:54:41 ÷ dialog
+--separator         ÷ ,
+--menu              ÷ Main Menu
+22                  ÷ 76
+16                  ÷ 
+2020-01-23 01:54:41 ÷ 1,Test,Item Shown
+2,Add,What is this
+3,Edit,Edit the menu
+4,system,Try this !
+5,MySysMenu,mylog
+2020-01-23 01:56:32 ÷ dialog
+--separator         ÷ ,
+--menu              ÷ Main Menu
+22                  ÷ 76
+16                  ÷ 
+2020-01-23 01:56:32 ÷ 1,Test,Item Shown
+2,Add,What is this
+3,Edit,Edit the menu
+4,system,Try this !
+5,MySysMenu,mylog
+2020-01-23 01:57:25 ÷ dialog
+--separator         ÷ ,
+--menu              ÷ Main Menu
+22                  ÷ 76
+16                  ÷ 
+2020-01-23 01:57:25 ÷ 1,Test,Item Shown
+2,Add,What is this
+3,Edit,Edit the menu
+4,system,Try this !
+5,MySysMenu,mylog
+2020-01-23 01:57:51 ÷ dialog
+--column-separator  ÷ ,
+--menu              ÷ Main Menu
+22                  ÷ 76
+16                  ÷ 
+2020-01-23 01:57:51 ÷ 1,Test,Item Shown
+2,Add,What is this
+3,Edit,Edit the menu
+4,system,Try this !
+5,MySysMenu,mylog
+2020-01-23 01:59:09 ÷ dialog
+--column-separator  ÷ ,
+--menu              ÷ Main Menu
+22                  ÷ 76
+16                  ÷ 
+2020-01-23 01:59:09 ÷ 1,Test,Item Shown
+2,Add,What is this
+3,Edit,Edit the menu
+4,system,Try this !
+5,MySysMenu,mylog
+2020-01-23 01:59:21 ÷ dialog
+--column-separator  ÷ ,
+--menu              ÷ Main Menu
+22                  ÷ 76
+16                  ÷ 
+2020-01-23 01:59:21 ÷ 1,Test,Item Shown
+2,Add,What is this
+3,Edit,Edit the menu
+4,system,Try this !
+5,MySysMenu,mylog
+2020-01-23 02:01:03 ÷ dialog
+--column-separator  ÷ ,
+--menu              ÷ Main Menu
+22                  ÷ 76
+16                  ÷ 
+2020-01-23 02:01:03 ÷ 1,Test,Item Shown
+2,Add,What is this
+3,Edit,Edit the menu
+4,system,Try this !
+5,MySysMenu,mylog
+2020-01-23 02:01:20 ÷ dialog
+--column-separator  ÷ ,
+--menu              ÷ Main Menu
+22                  ÷ 76
+16                  ÷ 
+2020-01-23 02:01:20 ÷ 1,Test,Item Shown
+2,Add,What is this
+3,Edit,Edit the menu
+4,system,Try this !
+5,MySysMenu,mylog
+2020-01-23 02:01:40 ÷ dialog
+--column-separator  ÷ ,
+--menu              ÷ Main Menu
+22                  ÷ 76
+16                  ÷ 
+2020-01-23 02:01:40 ÷ 1,Test,Item Shown
+2,Add,What is this
+3,Edit,Edit the menu
+4,system,Try this !
+5,MySysMenu,mylog
+2020-01-23 02:02:13 ÷ dialog
+--column-separator  ÷ ,
+--menu              ÷ Main Menu
+22                  ÷ 76
+16                  ÷ 
+2020-01-23 02:02:13 ÷ 1,Test,Item Shown
+2,Add,What is this
+3,Edit,Edit the menu
+4,system,Try this !
+5,MySysMenu,mylog
+2020-01-23 02:02:52 ÷ dialog
+--column-separator  ÷ ,
+--menu              ÷ Main Menu
+22                  ÷ 76
+16                  ÷ 
+2020-01-23 02:02:52 ÷ 1,Test,Item Shown
+2,Add,What is this
+3,Edit,Edit the menu
+4,system,Try this !
+5,MySysMenu,mylog
+2020-01-23 02:04:09 ÷ dialog
+--column-separator  ÷ ,
+--menu              ÷ Main Menu
+22                  ÷ 76
+16                  ÷ 
+2020-01-23 02:04:09 ÷ 1,Test,Item Shown
+2,Add,What is this
+3,Edit,Edit the menu
+4,system,Try this !
+5,MySysMenu,mylog
+2020-01-23 02:04:22 ÷ dialog
+--separator         ÷ ,
+--menu              ÷ Main Menu
+22                  ÷ 76
+16                  ÷ 
+2020-01-23 02:04:22 ÷ 1,Test,Item Shown
+2,Add,What is this
+3,Edit,Edit the menu
+4,system,Try this !
+5,MySysMenu,mylog
+2020-01-23 02:04:47 ÷ dialog
+--separator         ÷ ,
+--menu              ÷ Main Menu
+22                  ÷ 76
+16                  ÷ 
+2020-01-23 02:04:47 ÷ 1,Test,Item Shown
+2,Add,What is this
+3,Edit,Edit the menu
+4,system,Try this !
+5,MySysMenu,mylog
+2020-01-23 02:09:09 ÷ dialog
+--separator         ÷ ,
+--menu              ÷ Main Menu
+22                  ÷ 76
+16                  ÷ 
+2020-01-23 02:09:09 ÷ 1,Test,Item Shown
+2,Add,What is this
+3,Edit,Edit the menu
+4,system,Try this !
+5,MySysMenu,mylog
+2020-01-23 02:09:27 ÷ dialog
+--separator         ÷ ,
+--menu              ÷ Main Menu
+22                  ÷ 76
+16                  ÷ 
+2020-01-23 02:09:27 ÷ 1,Test,Item Shown
+2,Add,What is this
+3,Edit,Edit the menu
+4,system,Try this !
+5,MySysMenu,mylog
