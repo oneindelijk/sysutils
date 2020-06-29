@@ -1,0 +1,11 @@
+[session L-Term]
+[window sam]
+[window root]
+command=sudo -i
+[window iPython]
+[pane]
+command=ipython
+[pane]
+command=cd log
+command=ls
+
