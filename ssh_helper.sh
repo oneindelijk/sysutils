@@ -1,4 +1,17 @@
 #!/bin/bash
+version='0.0.5'
+
+
+# script to either try a list of names if no connection was made before
+# or connect with the same user as last succesfull attempt
+# if byobu is running, rename the window according to the target machine
+# 
+# Changelog
+# * Sam Van Kerckhoven <sam.vankerckhoven@cipalschaubroeck.be>   07-06-2020
+#   - find session from TMUX variable
+#
+##########    DEFINITIONS
+
 server=$1
 version="2.1"
 lang=nl
@@ -8,10 +21,12 @@ fg_n=forgot_server_${lang}
 forgot_server="${!fg_n}"
 cfg=~/.config/ssh_users
 logfile=~/log/ssh_helper.log
+ 
 USERS=( schsup sam svk foreman root ansible_user rescue )
 unset='·'
 list_sep='¸'
 
+##########   FUNCTIONS
 function log() {
     msg=${@}
     timestamp=$(date '+%F %T')
@@ -24,8 +39,12 @@ function log() {
 
 }
 function set_tmux() {
-    title="${@}"
-    tmux -S /tmp/tmux-1000/default rename-window $title
+    if [[ -n ${TMUX} ]]
+    then
+        title="${@}"
+        session=${TMUX/,*}
+        tmux -S ${session} rename-window ${title}
+    fi
 
 }
 function get_index(){
@@ -169,5 +188,8 @@ function main(){
     run_ssh
     
 }
+
+
+##########     MAIN
 main
 
