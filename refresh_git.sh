@@ -1,5 +1,5 @@
 #!/bin/bash
-version='0.0.76'
+version='0.0.78'
 # Sam Van Kerckhoven <sam.vankerckhoven@cipalschaubroeck.be>   07-06-2020
 # 
 # script that refresh git and opens a new pane once when in tmux to display the status in color
@@ -78,11 +78,4 @@ function check_tmux() {
 
 
 check_tmux
-(
-cd ~/ansible
-echo VERSION: ${version}
-date
-git fetch origin master
-git reset --hard FETCH_HEAD
-git clean -df
-) >> ~/logs/git_pull.log 2>&1
+sudo su - ansible -c /usr/local/bin/git_pull_ansible.sh
