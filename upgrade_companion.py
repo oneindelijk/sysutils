@@ -14,7 +14,7 @@ import time
 home = shutil.os.environ['HOME']
 modpath = shutil.os.path.join(home, 'myPython/mods')
 shutil.sys.path.append(modpath)
-from my_system import run_cmd, prit
+from my_system import run_cmd, run_bg_cmd, prit
 
 # variables
 
@@ -27,8 +27,8 @@ def check_run():
     if code == 0:
         return True
 def launch_expect():
-    command = '/usr/bin/expect "{}" | tee {}'.format(expect_script, expect_output)
-    run_cmd(command)
+    command = '/usr/bin/expect {}'.format(expect_script) #, expect_output)
+    run_bg_cmd(command, expect_output, expect_output)
     print("Launched: {}".format(command))
 
 launch_expect()
