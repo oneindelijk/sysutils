@@ -2,6 +2,7 @@
 version='0.0.78'
 # Sam Van Kerckhoven <sam.vankerckhoven@cipalschaubroeck.be>   07-06-2020
 # 
+# sysutils/refresh_git.sh
 # script that refresh git and opens a new pane once when in tmux to display the status in color
 
 window_name=refresh
