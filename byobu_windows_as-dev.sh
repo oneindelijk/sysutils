@@ -1,8 +1,8 @@
 #!/bin/bash
-version=0.9.0  # working
+version=0.9.1  # developing
 # create terminals and rename
-
-configFile=~/.config/byobu_windows-snifer.cfg
+# TODO: run command between brackets from configfile
+configFile=~/.config/byobu_windows.cfg
 
 
 function extract_session() {
