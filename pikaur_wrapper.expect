@@ -29,7 +29,7 @@ proc do_install { answ } {
                            exp_continue  }	
     -re "nnuleer.*bouwen.*pakketen.*>" { exp_send "s\r"
                            exp_continue  }	
-    -re "vervangen.*\[J/n]" { exp_send "J\r"
+    -re "vervangen.*\[J/n]" { exp_send "j\r"
                            exp_continue  }
     -re "Voer.*getal.*standaard" { exp_send "\r"
                            exp_continue  }
