@@ -2,7 +2,7 @@
 version=0.9.0  # working
 # create terminals and rename
 
-configFile=~/.config/byobu_windows-snifer.cfg
+configFile=~/.config/byobu_windows.cfg
 
 
 function extract_session() {

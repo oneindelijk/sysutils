@@ -10,6 +10,7 @@ if {$force_conservative} {
 	}
 }
 
+set package [lindex $argv 0];
 proc do_install { answ } {
   expect {
     # Send password at 'Password' prompt and tell expect to continue(i.e. exp_continue)
@@ -44,7 +45,7 @@ proc do_install { answ } {
 }
 set answ "j"
 set timeout 300
-spawn pikaur -Suy 
+spawn pikaur -S $package
 set scpfile_results [do_install $answ]
 
 # If successful SCP, ...

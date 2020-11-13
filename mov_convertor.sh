@@ -1,10 +1,12 @@
-version='0.9'
+version='0.9.3'
+# original in github.com/oneindelijk/sysutils.git
 ### FUNCTIONS
 tmp_dir=~/tmp
 config=~/.config/mov_convertor.cfg
 source ${config}
 latestbase=${tmp_dir}/latest
 runfile=~/.movcrt.run
+
 
 function log() {
     msg=${@}
