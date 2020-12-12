@@ -2,7 +2,7 @@
 version=0.9.0  # working
 # create terminals and rename
 
-configFile=~/.config/byobu_windows.cfg
+configFile=~/.config/byobu_windows-snifer.cfg
 
 
 function extract_session() {
@@ -28,9 +28,9 @@ function new_window(){
     printf "Window %s: %s\n" "${win_id}" "${win}"
     if [[ ${win_id} -eq 0 ]]
     then
-	byobu rename-window -t ${win_id} ${win}
+		byobu rename-window -t ${win_id} ${win}
     else
-	byobu new-window -n ${win} 
+		byobu new-window -n ${win} 
     fi
     byobu select-pane -t ${pane_id} -T ${win}
 }
@@ -59,18 +59,18 @@ do
 	do
 	    if [[ "${pane:0:1}" = "|" ]]
 	    then
-		# create horizontal pane
-		pane=${pane: 1}
-		split=-h
+			# create horizontal pane
+			pane=${pane: 1}
+			split=-h
 	    else
 		# create vertical pane
-		split=-v
+			split=-v
 	    fi
 	    if [[ ${pane_id} -eq 0 ]]
 	    then
-		new_window ${pane}
+			new_window ${pane}
 	    else
-		new_pane ${pane}
+			new_pane ${pane}
 	    fi
 	    pane_id=$((pane_id+1))
 	done
@@ -80,4 +80,4 @@ do
     
 done < ${configFile}
 
-nohup  byobu -S guake &
+byobu -S guake 

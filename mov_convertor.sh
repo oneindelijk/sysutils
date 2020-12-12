@@ -1,13 +1,16 @@
-version='0.9.3'
+version='0.9.6'
 # original in github.com/oneindelijk/sysutils.git
+### Changelog
+# changed tmp_dir from ~/tmp to /tmp
+
 ### FUNCTIONS
-tmp_dir=~/tmp
+
+tmp_dir=/tmp
 config=~/.config/mov_convertor.cfg
 source ${config}
 latestbase=${tmp_dir}/latest
 runfile=~/.movcrt.run
-
-
+unset debug 
 function log() {
     msg=${@}
     timestamp=$(date '+%F %T')
@@ -45,7 +48,7 @@ function extract_formats (){
     dst_tussen=${source_folder/-van-*}
     destination_format=${dst_tussen/*-}
     source_format=${source_folder/*-van-}
-    log Converting from ${source_format} to ${destination_format}
+    [[ -n ${debug} ]] && log Converting from ${source_format} to ${destination_format}
 }
 function execute_conversion() {
     src="${1}"
@@ -60,7 +63,7 @@ function execute_conversion() {
     if [[ $? -ne 0 ]] 
     then 
       mv ${tmp_dir}/ffmpeg_result "${err_file}" 
-      log Error in file "${err_file}" 
+      log Error logged in file "${err_file}"  
     else
       Conversion of ${src} succesful
       mv "${src}" ${workingdir}${backupfolder}
@@ -95,7 +98,7 @@ function check_drop_dir () {
     latest_bu=${latest}-$(date '+%F-%H_%M')
     [[ -z ${drop_dir} ]] && log no drop_dir given && return 1
     [[ -f ${latest} ]] && mv ${latest} ${latest_bu}
-    log storing contents ${watch_folder} #to ${latest}
+    [[ -n ${debug} ]] && log storing contents ${watch_folder} #to ${latest}
     ls -1 ${watch_folder} > ${latest}
     while read mov_file  
     do
@@ -119,7 +122,7 @@ function check_drop_dir () {
 function check_allwatchfolders( ){
     for wfolder in ${watchfolders[@]} 
     do
-        log Checking ${wfolder} for new files
+        [[ -n ${debug} ]] && log Checking ${wfolder} for new files
         extract_formats ${wfolder}
         check_drop_dir ${wfolder}
         # result=$(check_drop_dir ${wfolder})
