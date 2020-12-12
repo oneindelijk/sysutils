@@ -1,0 +1,6 @@
+# menutemplate
+name=for
+type=replacing
+parent=old
+file=item
+command=the

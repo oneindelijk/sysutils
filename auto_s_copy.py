@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> afd8837... fix spacewlk
 
 
 # new version in /home/sam/Python/auto_scp/auto_copy.py
@@ -10,8 +14,16 @@
 
 print('new version in /home/sam/Python/auto_scp/auto_copy.py')
 
+<<<<<<< HEAD
 import shutil 
 shutil.sys.exit()
+=======
+import shutil 
+>>>>>>> b33922a... auto_copy_script
+=======
+import shutil 
+shutil.sys.exit()
+>>>>>>> afd8837... fix spacewlk
 home='/home/sam'
 shutil.sys.path.append(shutil.os.path.join(home,'Python/mods'))
 import time
@@ -36,9 +48,18 @@ def check_age(sourcefile ):
 def manage_defaults(variable):
     if not 'defaults' in Config.data:
         Config.data['defaults'] = {}
+<<<<<<< HEAD
+<<<<<<< HEAD
     if variable=='*':
        preset = wiz_select_nb(Config.data['presetlist'], force_Horizontal=False) 
        load_preset(preset, Config.data).re_init()
+=======
+>>>>>>> b33922a... auto_copy_script
+=======
+    if variable=='*':
+       preset = wiz_select_nb(Config.data['presetlist'], force_Horizontal=False) 
+       load_preset(preset, Config.data).re_init()
+>>>>>>> afd8837... fix spacewlk
     if variable in Config.data['defaults']:
         defaults = Config.data['defaults'][variable]
         if len(defaults) > 0:
@@ -203,12 +224,28 @@ def secure_copy(presetdata):
     )
     log (command, 8)
     result, error, code = run_cmd(command)
+<<<<<<< HEAD
+<<<<<<< HEAD
     log('Command ended with success {}'.format('-'), 10)
     if code != 0:
         log('Command ended with error {} {}'.format(result, error), 6)
 
 log_init(loglevel, logdir, logfile)
 log('Starting autoscp script. Logging set to {}'.format(loglevel),8)
+=======
+    log('Command ended with success {}'.format(result), 10)
+=======
+    log('Command ended with success {}'.format('-'), 10)
+>>>>>>> afd8837... fix spacewlk
+    if code != 0:
+        log('Command ended with error {} {}'.format(result, error), 6)
+
+log_init(loglevel, logdir, logfile)
+<<<<<<< HEAD
+>>>>>>> b33922a... auto_copy_script
+=======
+log('Starting autoscp script. Logging set to {}'.format(loglevel),8)
+>>>>>>> afd8837... fix spacewlk
 Config=Info(autocopy_info)
 Config.load(create=True)
 Config.data = init_config(Config.data)
@@ -225,9 +262,19 @@ if len(shutil.sys.argv) > 1:
             log('Running {}'.format(choice), 10)
 else:
     if len(presetlist) > 0:
+<<<<<<< HEAD
+<<<<<<< HEAD
         choice = wiz_select_nb(presetlist, force_Horizontal=False, return_mismatched=True)
         if choice=='*':
            manage_defaults(choice) 
+=======
+        choice = wiz_select_nb(presetlist, force_Horizontal=False)
+>>>>>>> b33922a... auto_copy_script
+=======
+        choice = wiz_select_nb(presetlist, force_Horizontal=False, return_mismatched=True)
+        if choice=='*':
+           manage_defaults(choice) 
+>>>>>>> afd8837... fix spacewlk
 # try:
 #     print(choice)
 # except NameError:

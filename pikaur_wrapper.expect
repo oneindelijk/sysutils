@@ -9,7 +9,7 @@ if {$force_conservative} {
 		exp_send -s -- $arg
 	}
 }
-
+exp_internal 1
 proc do_install { answ } {
   expect {
     # Send password at 'Password' prompt and tell expect to continue(i.e. exp_continue)
@@ -33,7 +33,9 @@ proc do_install { answ } {
                            exp_continue  }
     -re "Voer.*getal.*standaard" { exp_send "\r"
                            exp_continue  }
-    -re "bouwbestanden.*bekijken" { exp_send "n\r"
+    -re "pakket.*bekijken" { exp_send "n\r"
+                           exp_continue  } 
+    -re "pakket.*aanpassen" { exp_send "n\r"
                            exp_continue  }						   
     # Tell expect stay in this 'expect' block and for each character that SCP prints while doing the copy
     # reset the timeout counter back to 0.

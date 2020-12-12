@@ -1,5 +1,23 @@
 #!/bin/bash
+version='0.0.5'
+
+
+# script to either try a list of names if no connection was made before
+# or connect with the same user as last succesfull attempt
+# if byobu is running, rename the window according to the target machine
+# 
+# Changelog
+# * Sam Van Kerckhoven <sam.vankerckhoven@cipalschaubroeck.be>   25-08-2020
+#   - add ssh command functionality
+#
+# * Sam Van Kerckhoven <sam.vankerckhoven@cipalschaubroeck.be>   07-06-2020
+#   - find session from TMUX variable
+#
+##########    DEFINITIONS
+
 server=$1
+shift
+command=$@
 version="2.1"
 lang=nl
 forgot_server_en="Did you forget to add a server ?"
@@ -8,10 +26,12 @@ fg_n=forgot_server_${lang}
 forgot_server="${!fg_n}"
 cfg=~/.config/ssh_users
 logfile=~/log/ssh_helper.log
+ 
 USERS=( schsup sam svk foreman root ansible_user rescue )
 unset='·'
 list_sep='¸'
 
+##########   FUNCTIONS
 function log() {
     msg=${@}
     timestamp=$(date '+%F %T')
@@ -24,8 +44,12 @@ function log() {
 
 }
 function set_tmux() {
-    title="${@}"
-    tmux -S /tmp/tmux-1000/default rename-window $title
+    if [[ -n ${TMUX} ]]
+    then
+        title="${@}"
+        session=${TMUX/,*}
+        tmux -S ${session} rename-window ${title}
+    fi
 
 }
 function get_index(){
@@ -92,6 +116,13 @@ function run_ssh() {
     log_results
     set_tmux ${unset}
 }
+function run_ssh_command() {
+    
+    ssh -o BatchMode=yes -o StrictHostKeyChecking=no -o ConnectTimeout=10 ${user}@${server} ${command[@]}
+    ssh_result=$?
+    log_results
+    
+}
 
 function get_next_user(){
     current=$1
@@ -147,7 +178,7 @@ function main(){
     log "===== SSH Helper :: ${version} ::"
     index=$(get_index ${server})
     [[ -z ${user} ]] && user=${USERS[${index}]}
-    set_tmux ${server}
+    [[ -z ${command} ]] &&  set_tmux ${server}
     last=$(get_value ${server} last_result)
     while [[ ${last} != 0 ]]
     do  
@@ -166,8 +197,18 @@ function main(){
             fi
         fi
     done
-    run_ssh
+    if [[ -z ${command} ]] 
+    then
+        # run interactive ssh session
+        run_ssh
+    else
+        # run reomte ssh command
+        run_ssh_command
+    fi
     
 }
+
+
+##########     MAIN
 main
 
