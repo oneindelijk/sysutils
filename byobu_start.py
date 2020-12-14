@@ -31,7 +31,7 @@ mod_dir = '/home/sam/Python/mods'
 shutil.sys.path.append(mod_dir)
 from my_system import run_cmd
 debuglevel = 10
-configfile='byobu_windows_test.cfg'
+configfile='byobu_windows.cfg'
 logfile = None
 def log(msg, severity = 4, cat = 'default'):
     if severity <= debuglevel:

@@ -84,7 +84,7 @@ def execute(fn, payload = None):
 
 def package_from_payload(data):
     if ' vervangen ' in data:
-        R = re.compile('met\ [a-z]*/*([a-z-]+)\?')
+        R = re.compile('met\ [a-z]*/*([a-z-]+)\?') 
         S = R.search(data)
         if S:
             pkg = S.groups()[0]
