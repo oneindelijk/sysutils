@@ -1,4 +1,4 @@
-version='0.9.6'
+version='0.9.7'
 # original in github.com/oneindelijk/sysutils.git
 ### Changelog
 # changed tmp_dir from ~/tmp to /tmp
@@ -86,8 +86,12 @@ function prepare_file_for_conversion() {
     then
         execute_conversion "${sourcefile}" "${target}"
     else
-        log ERROR not a mov file ${mov_file,,}
-        echo ERROR not a mov file ${mov_file,,} > "${err_file}"
+        if [[ "${extension,,}" = any ]]
+            execute_conversion "${sourcefile}" "${target}"
+        else
+            log ERROR not a ${extension,,} file ${mov_file,,}
+            echo ERROR not a ${extension,,} file ${mov_file,,} > "${err_file}"
+        fi
     fi
     set +x
 }
@@ -108,12 +112,12 @@ function check_drop_dir () {
         then
            ok=ok
         else
-        if [[ ! -e "${err_file}" ]]
-        then
-            prepare_file_for_conversion "${mov_file}"
-        else
-            log Skipping "${mov_file}" in Error
-        fi
+            if [[ ! -e "${err_file}" ]]
+            then
+                prepare_file_for_conversion "${mov_file}"
+            else
+                log Skipping "${mov_file}" in Error
+            fi
         fi
     done < ${latest}
 
