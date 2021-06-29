@@ -120,7 +120,7 @@ def list_windows(sess):
 def create_window(sessionname, windowname):
     ''' create new window or rename if it is the first one '''
     wins = list_windows(sessionname)
-    if len(wins) == 1 and wins[0]['name'] == '-':
+    if len(wins) == 1 and wins[0]['name'] == 'zsh':
         command = 'byobu rename-window -t {}:0 {}'.format(sessionname, windowname) 
         log ('Renaming window {}:O to {}'.format(sessionname, windowname),8)
     else:

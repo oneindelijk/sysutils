@@ -1,0 +1,11 @@
+[Unit]
+Description=Timelapse Movie
+Wants=movieclean.timer
+
+[Service]
+Type=simple
+User=pi
+ExecStart=/usr/local/bin/movieclean.sh
+
+[Install]
+WantedBy=multi-user.target

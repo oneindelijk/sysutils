@@ -1,0 +1,12 @@
+[Unit]
+Description=Run the movieclean service
+Requires=movieclean.service
+
+[Timer]
+Unit=movieclean.service
+OnCalendar=*-*-* 0,9,14,20:00:00
+
+[Install]
+WantedBy=timers.target
+
+# systemd-analyze calendar $(systemctl cat movieclean.timer | sed -ne 's:OnCalendar=::p')

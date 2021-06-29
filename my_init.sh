@@ -33,8 +33,15 @@ function pick_shell() {
 
 }
 
+function check_os() {
+	id_line=$(uname -a)
+	[[ ${id_line} =~ *raspberrypi* ]] && OS=raspberry
+	[[ ${id_line} =~ *armv[0-9]* ]] && ARCH=arm
+
+}
+
 function checks() {
-	# check OS
+	check_os
 	# check ssh key
 	# check shell
 	# check ipython
@@ -45,3 +52,5 @@ function main() {
 	header
 	checks
 }
+
+main
