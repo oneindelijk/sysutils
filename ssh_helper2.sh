@@ -1,6 +1,13 @@
 #!/bin/bash
 # set -x
 unset='-'
+first=${1}
+if [[ ${first: :1} == '-' ]]
+then    
+    # switch
+    switch=${1}
+    shift
+fi
 server=${1}
 shift
 command=${@}
@@ -31,7 +38,7 @@ function set_tmux() {
 }
 function run_ssh_command() {
     check_sock
-    ssh -o BatchMode=yes -o StrictHostKeyChecking=no -o ConnectTimeout=10 ${server} "${command[@]}"
+    ssh -o BatchMode=yes -o StrictHostKeyChecking=no -o ConnectTimeout=10 ${switch} ${server} "${command[@]}"
 }
 
 function run_ssh() {

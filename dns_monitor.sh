@@ -1,7 +1,16 @@
 #!/bin/bash
-version="0.0.6"
+version="0.0.13"
 
 # open several panes in byobu to monitor DNS and DHCP 
+function warn() {
+    boxchar='-'  # ÷
+    boxchar2='|'
+    msg=${@}
+    mlength=${#msg}
+    mlength=$((mlength + 4))
+    marker=$(printf "${boxchar}%.0s" {1..$mlength})
+    printf "   %s\n   ${boxchar2} %s ${boxchar2}\n   %s\n" "${marker}" "${msg}" "${marker}"
+}
 
 function checks(){
     # check if we're running as a user
@@ -12,6 +21,18 @@ function checks(){
     if [[ -z ${TMUX} ]]
     then    
       printf "Tmux not running yet"
+      byobu
+    fi
+    SESSION=${TMUX%%,*}
+}
+
+function check_current_pane() {
+    if [[ ! -z ${SESSION} ]]
+    then
+        active_line=$(byobu -S ${SESSION} list-panes | grep active)
+        current_pane=${active_line#:*}
+    else
+        warn No Active Session
     fi
 }
 
