@@ -55,6 +55,8 @@ function check_sock() {
     then
         printf "Renewing SOCK %s\n" "${csock}"
         export SSH_AUTH_SOCK=${csock}
+    else
+        printf "Sock not changed: %s\n" "${csock}"
     fi 
 }
 
